@@ -9,9 +9,9 @@ def home(request):
 
 def speech(request):
     mytext = request.POST.get('text','')
-    print(mytext)
-    language = 'en'
-    tts = gTTS(text=mytext, lang=language, slow=False) 
-    tts.save("welcome.mp3") 
-    playsound('welcome.mp3')
-    return render(request,'speech.html')
+    if(mytext==''):
+        mytext='No text to Speak'
+    tts = gTTS(text=mytext, lang='en', slow=False) 
+    tts.save("sound.mp3") 
+    playsound('sound.mp3')
+    return render(request,'afterSpeech.html')
