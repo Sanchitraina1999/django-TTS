@@ -23,17 +23,22 @@
             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About Me</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            <a class="nav-link" href="https://sanchitraina1999.github.io/">About Me</a>
           </li>
         </ul>
       </div>
     </nav>
+
+    <div class="container">
+      <form action='/speech' method='post'>{% csrf_token %}
+        <div class="form-group mt-5">
+          <label for="exampleFormControlTextarea1">Enter your text here: </label>
+          <textarea name ="text" class="form-control" id="exampleFormControlTextarea1" rows="3" spellcheck="false" style="margin-top: 0px; margin-bottom: 0px; height: 231px;"></textarea>
+        </div>
+        <button type="submit"  id="submit" class="btn btn-dark"> &#x2705; Submit</button>
+        <button  type="button"  class="btn btn-danger"> &#x274E;  Clear</button>
+      </form>
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
